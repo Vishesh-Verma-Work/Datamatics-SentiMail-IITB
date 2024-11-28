@@ -1,0 +1,67 @@
+.process-mail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .status-box {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: center;
+  }
+  
+  .status-box p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .loading-status {
+    font-weight: bold;
+    font-size: 18px;
+    color: #e74c3c; /* red color for error or processing status */
+  }
+  
+  .action-container {
+    width: 80%;
+    text-align: center;
+  }
+  
+  .process-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .process-button:hover {
+    background-color: #2980b9;
+  }
+  
+  pre {
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  

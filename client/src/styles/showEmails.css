@@ -1,0 +1,120 @@
+/* Global styling for the mail page */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+.mail-container {
+  cursor: pointer;
+  margin: 50px 4rem;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+  transition: height 0.3s ease; /* Add smooth height transition */
+}
+
+/* Header section */
+.mail-header {
+  border-bottom: 2px solid #ececec;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.mail-header h1 {
+  font-size: 24px;
+  color: #333333;
+  margin: 0;
+}
+
+.mail-meta p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* Body section */
+.mail-body {
+  margin-bottom: 20px;
+}
+
+.mail-body h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.mail-body p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/* Show More Button */
+.show-more-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.show-more-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Footer section */
+.mail-footer h3 {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.mail-labels {
+  display: flex;
+  gap: 10px;
+}
+
+.label {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.num {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .mail-container {
+    margin: 20px 2rem;
+  }
+}
