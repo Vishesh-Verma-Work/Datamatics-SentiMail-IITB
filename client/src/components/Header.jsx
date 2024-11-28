@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header className="header">
-      <div className="header__logo">MERN App</div>
+      <div className="header__logo">SentiMail</div>
       <nav className="header__nav">
         <NavLink to={"/"} className="header__link">Home</NavLink>
         <NavLink to={"/processMails"} className="header__link">Process Mails</NavLink>
