@@ -1,0 +1,89 @@
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  /* margin-bottom: 15rem; */
+}
+
+.chart-container:hover{
+  cursor: pointer;
+  box-shadow: 0 0 1.5rem rgba(122, 122, 122, 0.463);
+}
+
+.chart-container {
+  width: 45%;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 2rem rgba(0, 0, 0, 0.1);
+}
+
+.bar-chart {
+  height: 400px;
+}
+
+.pie-chart {
+  height: 400px;
+}
+
+
+.processedHeader {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.processedHeader-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.processedHeader-item {
+  flex: 1 1 200px;
+  display: flex;
+  justify-content: space-between;
+  background: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.processedHeader-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.processedHeader-count {
+  color: #555;
+}
+
+.chat-title{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.chat-title h3 {
+  margin: 1rem auto;
+  font-weight: 700;
+  font-size: 1.9rem;
+  padding: 0;
+
+}
+.chart-main 
+{
+  height:90vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 3.5rem;
+}

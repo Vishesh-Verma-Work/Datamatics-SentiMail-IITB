@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "../styles/showEmails.css";
+import React, { useState, useEffect } from 'react';
+import '../styles/showEmails.css';
 
 const ShowMail = () => {
   const [emails, setEmails] = useState([]);
@@ -11,16 +11,16 @@ const ShowMail = () => {
 
   const getEmails = async () => {
     try {
-      const emailData = await fetch("http://localhost:3000/getemails");
+      const emailData = await fetch('http://localhost:3000/getemails');
       const emailDataJson = await emailData.json();
       setEmails(emailDataJson);
     } catch (err) {
-      console.error("Failed to fetch emails", err);
+      console.error('Failed to fetch emails', err);
     }
   };
 
   const formatBody = (body) => {
-    return body.replace(/(?:\r\n|\r|\n)/g, "<br />");
+    return body.replace(/(?:\r\n|\r|\n)/g, '<br />');
   };
 
   const toggleExpand = (emailId) => {
@@ -32,13 +32,13 @@ const ShowMail = () => {
 
   return (
     <>
-      <h3 className="num">Number of Mails ({emails.length})</h3>
-      <div className="main">
+      <h3 className='num'>Number of Mails ({emails.length})</h3>
+      <div className='main'>
         {emails.slice().reverse().map((email) => (
-          <div key={email._id} className="mail-container">
-            <div className="mail-header">
+          <div key={email._id} className='mail-container'>
+            <div className='mail-header'>
               <h1>{email.subject}</h1>
-              <div className="mail-meta">
+              <div className='mail-meta'>
                 <p>
                   <strong>From:</strong> {email.from}
                 </p>
@@ -56,29 +56,29 @@ const ShowMail = () => {
               </div>
             </div>
 
-            <div className="mail-body">
+            <div className='mail-body'>
               <h2>Body :</h2>
               <p
                 dangerouslySetInnerHTML={{
                   __html:
                     expanded[email._id]
                       ? formatBody(email.body) // Show full body if expanded
-                      : formatBody(email.body).substring(0, 300) + "..." // Truncate to 300 characters
+                      : formatBody(email.body).substring(0, 300) + '...' // Truncate to 300 characters
                 }}
               />
               <button
-                className="show-more-btn"
+                className='show-more-btn'
                 onClick={() => toggleExpand(email._id)}
               >
-                {expanded[email._id] ? "Show Less" : "Show More"}
+                {expanded[email._id] ? 'Show Less' : 'Show More'}
               </button>
             </div>
 
-            <div className="mail-footer">
+            <div className='mail-footer'>
               <h3>Labels</h3>
-              <div className="mail-labels">
+              <div className='mail-labels'>
                 {email.labels.map((label, index) => (
-                  <span key={index} className="label">
+                  <span key={index} className='label'>
                     {label}
                   </span>
                 ))}

@@ -8,12 +8,14 @@ import Home from "./src/components/Home";
 import ShowEmails from "./src/components/ShowEmails";
 import PushMail from "./src/components/PushMail";
 import ProcessMail from "./src/components/ProcessMail";
-
+import ProcessedHeader from "./src/components/ProcessedHeader";
+import OpenMail from "./src/components/OpenMail";
+import  VisualData from "./src/components/VisualData";
 
 // import { createBrowserRouter, RouterProvider, Outlet, Link } from "react-router-dom";
 
-import { createBrowserRouter, RouterProvider } from 'react-router';
-import { Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router";
+import { Outlet } from "react-router-dom";
 
 
 const Main = ()=>{
@@ -50,6 +52,26 @@ const appRouter = createBrowserRouter([
           {
             path : "/processMails",
             element : <ProcessMail/>,
+            errorElement : <Error/>
+          },
+          {
+            path : "/dashboard",
+            element : <ProcessedHeader/>,
+            errorElement : <Error/>
+          },
+          {
+            path : "/dashboard/:id",
+            element : <OpenMail/>,
+            errorElement : <Error/>
+          },
+          {
+            path : "/visual",
+            element : <VisualData/>,
+            errorElement : <Error/>
+          },
+          {
+            path : "/mc",
+            element : <Home/>,
             errorElement : <Error/>
           }
       ]

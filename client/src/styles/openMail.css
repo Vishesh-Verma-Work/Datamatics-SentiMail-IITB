@@ -1,0 +1,78 @@
+/* Container */
+.open-mail-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Title */
+.open-mail-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #3f51b5;
+}
+
+/* Sections */
+.open-mail-section {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.open-mail-section-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+    border-bottom: 2px solid #3f51b5;
+}
+
+/* Fields */
+.open-mail-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.open-mail-label {
+    font-weight: bold;
+    width: 30%;
+    color: #333;
+}
+
+.open-mail-value {
+    width: 65%;
+    text-align: right;
+    word-wrap: break-word;
+    color: #555;
+}
+
+/* Mail Body */
+.open-mail-body-content {
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .open-mail-field {
+        flex-direction: column;
+    }
+
+    .open-mail-label, .open-mail-value {
+        width: 100%;
+        text-align: left;
+    }
+}

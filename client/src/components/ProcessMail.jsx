@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../styles/processMail.css';
-require("dotenv").config({ path: "../../.env" });
+require('dotenv').config({ path: '../../.env' });
 
 const ProcessMail = () => {
   const [emails, setEmails] = useState([]);
@@ -20,13 +20,13 @@ const ProcessMail = () => {
   // Fetch emails from the server
   const getEmails = async () => {
     try {
-      const response = await fetch("http://localhost:3000/getemails");
+      const response = await fetch('http://localhost:3000/getemails');
       const data = await response.json();
       setEmails(data);
       updateProcessedCount(data);
 
       // making subject, id, body api for the AI
-      const fetchEmails = data.filter((email) => email.status === "fetch");
+      const fetchEmails = data.filter((email) => email.status === 'fetch');
 
       const apiPayload = fetchEmails.map((email) => ({
         _id: email._id,
@@ -36,7 +36,7 @@ const ProcessMail = () => {
 
       setApiInput(apiPayload);
     } catch (err) {
-      console.error("Error fetching emails:", err);
+      console.error('Error fetching emails:', err);
     }
   };
 
@@ -51,7 +51,7 @@ const ProcessMail = () => {
 
   const updateProcessedCount = (emailList) => {
     const unprocessed = emailList.filter(
-      (email) => email.status === "fetch"
+      (email) => email.status === 'fetch'
     ).length;
 
     const processed = emailList.length - unprocessed;
@@ -63,7 +63,7 @@ const ProcessMail = () => {
   const triggerAI = () => {
     // Check if there are any emails with status 'fetch'
     if (unprocessedCount === 0) {
-      alert("No mails to process.");
+      alert('No mails to process.');
       return; // Prevent further execution if no unprocessed mails
     }
 
@@ -77,7 +77,7 @@ const ProcessMail = () => {
       setLoadingStatus('AI is processing... Please wait!');
       const response = await axios({
         url: `${process.env.START_API_KEY}${process.env.API_KEY}`,
-        method: "POST",
+        method: 'POST',
         data: {
           contents: [{ parts: [{ text: finalPrompt }] }],
         },
@@ -86,7 +86,7 @@ const ProcessMail = () => {
       const rawResponse =
         response?.data?.candidates[0]?.content?.parts[0]?.text;
 
-      const cleanedResponse = rawResponse.replace(/```json|```/g, "").trim();
+      const cleanedResponse = rawResponse.replace(/```json|```/g, '').trim();
       setAiAns(cleanedResponse);
 
       const temp = JSON.parse(cleanedResponse);
@@ -97,38 +97,38 @@ const ProcessMail = () => {
       setLoadingStatus('Data successfully processed!');
     } catch (error) {
       setLoadingStatus('Error processing data.');
-      console.error("Error fetching processed data:", error);
+      console.error('Error fetching processed data:', error);
     }
   };
 
   const updateDatabase = async (processedData) => {
     try {
       const response = await axios({
-        url: "http://localhost:3000/updateemails",
-        method: "PUT",
+        url: 'http://localhost:3000/updateemails',
+        method: 'PUT',
         data: processedData,
       });
 
       if (response.status === 200) {
-        alert("Processed data saved to the database successfully.");
+        alert('Processed data saved to the database successfully.');
       } else {
-        console.error("Failed to update the database.");
+        console.error('Failed to update the database.');
       }
     } catch (err) {
-      console.error("Error updating database:", err);
+      console.error('Error updating database:', err);
     }
   };
 
   return (
-    <div className="process-mail-container">
-      <div className="status-box">
+    <div className='process-mail-container'>
+      <div className='status-box'>
         <p>Number of Fetched Emails: {unprocessedCount}</p>
         <p>Number of Processed Emails: {processedCount}</p>
         <p>Total Numbers of Emails: {emails.length}</p>
-        <p className="loading-status">{loadingStatus}</p>
+        <p className='loading-status'>{loadingStatus}</p>
       </div>
-      <div className="action-container">
-        <button onClick={triggerAI} className="process-button">Process Unprocessed Mails</button>
+      <div className='action-container'>
+        <button onClick={triggerAI} className='process-button'>Process Unprocessed Mails</button>
         <pre>{aiAns || <p>Processing.....Please Wait</p>}</pre>
       </div>
     </div>

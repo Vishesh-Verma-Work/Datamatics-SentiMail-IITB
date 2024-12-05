@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
-const express = require("express");
+const mongoose = require('mongoose');
+const express = require('express');
 const app = express();
-const user = require("../models/mailModel")
+const user = require('../models/mailModel')
 const router = express.Router();
 
 

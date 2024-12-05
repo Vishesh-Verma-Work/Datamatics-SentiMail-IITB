@@ -26,7 +26,7 @@ describe('Gmail API test suite', () => {
 
   it('To verify email content like subject', async () => {
     let messages = await listMessages(authClient).catch(console.error);
-    console.log(messages + " from test");
+    console.log(messages + ' from test');
     expect(messages).to.not.be.null;
     expect(messages).to.equal('Hello World!');
   });
