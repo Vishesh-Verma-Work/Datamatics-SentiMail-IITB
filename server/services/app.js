@@ -112,6 +112,9 @@ app.get('/pushemails', async (req, res) => {
 app.get('/getemails', async (req,res)=>{
   try{
     const data = await mailSchema.find();
+    // const j = await mailSchema.find({mailType : "fetched"})
+    // const k = j.json();
+    // console.log(k);
   res.status(201).json(data);
   }catch(err){
     console.log(err);
