@@ -32,7 +32,7 @@ const ProcessedHeader = () => {
   const showData = async (mailTypeReq) => {
     const mailDatas = await fetch(`http://localhost:3000/${mailTypeReq}`);
     const mailDatasJson = await mailDatas.json();
-    setMailData(mailDatasJson);
+    setMailData(mailDatasJson.reverse());
     setName(mailTypeReq);
   };
 

@@ -326,11 +326,22 @@ app.get('/getsentiments', async (req,res)=>{
 });
 
 
+app.get('/fetcheddatajusttrying', async (req,res)=>{
+  try{
+    const feedbackData = await mailSchema.find({
+      status: 'fetched'
+    }).sort({ mailDate: -1 });
+    res.status(201).json(feedbackData);
+    console.log(feedbackData);
+  }catch(e){
+    console.log(e);
+  }
+})
 
 
 
 
-app.post('/23s', async (req, res) => {
+app.post('/233453s', async (req, res) => {
   try {
     // Sample data to insert
     const data = [
@@ -523,8 +534,6 @@ app.post('/insertmanydata2', async (req, res) => {
 });
 
 
-
-
 let maalMasala = [
   
   {
@@ -661,7 +670,7 @@ let maalMasala = [
   }  
 ]
 
-app.post('/mc', (req,res)=>{
+app.post('/3434322', (req,res)=>{
   mailSchema.insertMany(maalMasala)
     .then(() => {
       console.log('Data inserted successfully for Chandra Hospital in Ghaziabad');
