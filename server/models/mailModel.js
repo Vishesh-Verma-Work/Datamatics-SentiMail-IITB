@@ -55,18 +55,11 @@ const mailModel = new mongoose.Schema({
     },
 
 
-
-
-
-
-
     mailType: {
         type: String,
         enum: ['none', 'feedback', 'complaints', 'queries', 'supportRequests', 'appreciation', 'subscription/uns', 'others'],
         default: 'none'
     },
-    
-
     
     processedName: {
         type : [String],
