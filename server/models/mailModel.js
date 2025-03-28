@@ -54,7 +54,7 @@ const mailModel = new mongoose.Schema({
         default: 'fetch'
     },
 
-
+// choices
     mailType: {
         type: String,
         enum: ['none', 'feedback', 'complaints', 'queries', 'supportRequests', 'appreciation', 'subscription/uns', 'others'],
