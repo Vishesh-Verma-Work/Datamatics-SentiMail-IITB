@@ -32,10 +32,16 @@ const ProcessedHeader = () => {
   const showData = async (mailTypeReq) => {
     const mailDatas = await fetch(`http://localhost:3000/${mailTypeReq}`);
     const mailDatasJson = await mailDatas.json();
-    setMailData(mailDatasJson.reverse());
+  
+    // Sorting mails by date (most recent first)
+    const sortedMails = mailDatasJson.sort((a, b) => 
+      new Date(b.mailDate) - new Date(a.mailDate)
+    );
+  
+    setMailData(sortedMails);
     setName(mailTypeReq);
   };
-
+  
   return (
     <>
       <div className='processedHeader'>
