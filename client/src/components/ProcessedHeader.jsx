@@ -78,7 +78,7 @@ const ProcessedHeader = () => {
             className='processedHeader-item'
             onClick={() => showData('supportRequests')}
           >
-            <span className='processedHeader-label'>Support Requests</span>
+            <span className='processedHeader-label'>Support Req</span>
             <span className='processedHeader-count'>({supportRequests})</span>
           </div>
           <div
@@ -93,7 +93,7 @@ const ProcessedHeader = () => {
             onClick={() => showData('subscription')}
           >
             <span className='processedHeader-label'>
-              Subscription/Unsubscription
+              Sub/UnSub
             </span>
             <span className='processedHeader-count'>({subUns})</span>
           </div>

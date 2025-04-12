@@ -11,6 +11,7 @@ import ProcessMail from "./src/components/ProcessMail";
 import ProcessedHeader from "./src/components/ProcessedHeader";
 import OpenMail from "./src/components/OpenMail";
 import  VisualData from "./src/components/VisualData";
+import BodyTemp from "./src/components/BodyTemp";
 
 // import { createBrowserRouter, RouterProvider, Outlet, Link } from "react-router-dom";
 
@@ -71,7 +72,7 @@ const appRouter = createBrowserRouter([
           },
           {
             path : "/mc",
-            element : <Home/>,
+            element : <BodyTemp/>,
             errorElement : <Error/>
           }
       ]

@@ -1,159 +1,219 @@
-/* General Reset */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #f4f4f9;
+/* home.css */
+
+/* Global Container */
+.home-container {
+  /* height: 30rem; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4fa;
+  color: #1a1f36;
+  overflow-x: hidden;
+}
+
+/* Landing */
+.home-landing-section {
+  position: relative;
+  background: linear-gradient(120deg, #001f4d, #003366);
+  color: white;
+  padding: 120px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.home-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  z-index: 1;
+  /* height: 90rem; */
+}
+
+.home-landing-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.home-brand-name {
+  color: #00d1ff;
+  font-weight: bold;
+}
+
+.home-animated-heading {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.home-tagline {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.home-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: auto;
+  opacity: 0.9;
+}
+
+.h-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+.h-img img {
+  height: 35rem;
+}
+.home-cta-button {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 14px 30px;
+  background: #00d1ff;
+  color: #001f4d;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.home-cta-button:hover {
+  background: white;
+  color: #001f4d;
+}
+
+/* About */
+.home-about {
+  padding: 80px 40px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.home-about h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.home-about p {
+  font-size: 1.1rem;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  line-height: 1.8;
+}
+
+/* Features */
+.home-features {
+  background-color: #e6f0ff;
+  padding: 80px 40px;
+}
+
+.home-features h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.home-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.home-feature-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.home-feature-box:hover {
+  transform: translateY(-10px);
+}
+
+.home-feature-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+/* How It Works */
+.home-how-it-works {
+  padding: 80px 40px;
+  background-color: #f9fbff;
+}
+
+.home-how-it-works h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.home-workflow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.home-workflow-step {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 240px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.home-workflow-step:hover {
+  transform: scale(1.05);
+}
+
+.home-workflow-step span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00d1ff;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* CTA */
+.home-cta {
+  background: linear-gradient(135deg, #003366, #001f4d);
+  color: white;
+  text-align: center;
+  padding: 100px 40px;
+}
+
+.home-cta h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+
+.home-cta p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
-  
-  .home-container {
-    width: 100%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  
-  .cta-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 25px;
-    font-size: 1rem;
-    color: #fff;
-    background: #e63946;
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .cta-button:hover {
-    transform: scale(1.1);
-  }
-  
-  /* About Section */
-  .about {
-    padding: 50px 20px;
-    background: #fefefe;
-    text-align: center;
-  }
-  
-  .about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .about p {
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  /* Services Section */
-  .services {
-    padding: 50px 20px;
-    background: #f8f9fa;
-    text-align: center;
-  }
-  
-  .services h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .service-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .service-card {
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    width: 250px;
-    animation: scaleUp 1s ease;
-  }
-  
-  .service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .service-card p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  /* Features Section */
-  .features {
-    padding: 50px 20px;
-    text-align: center;
-    background: #1d3557;
-    color: #fff;
-  }
-  
-  .features h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .feature-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .feature-item {
-    max-width: 300px;
-    text-align: center;
-  }
-  
-  .feature-item h3 {
-    font-size: 1.3rem;
-  }
-  
-  .feature-item p {
-    font-size: 1rem;
-    color: #ccc;
-  }
-  
-  /* Call-to-Action Section */
-  .cta {
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #e63946, #f1faee);
-    text-align: center;
-    color: #fff;
-  }
-  
-  .cta h2 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .cta p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes scaleUp {
-    from {
-      transform: scale(0.9);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-  
+}

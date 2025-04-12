@@ -1,89 +1,183 @@
-.chart-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  /* margin-bottom: 15rem; */
+.vis-chart-main {
+  min-height: 100vh;
+  background-color: #f7f9fb;
+  color: #222;
+  padding: 6rem 1.5rem 3rem 1.5rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-.chart-container:hover{
-  cursor: pointer;
-  box-shadow: 0 0 1.5rem rgba(122, 122, 122, 0.463);
-}
-
-.chart-container {
-  width: 45%;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 2px 2rem rgba(0, 0, 0, 0.1);
-}
-
-.bar-chart {
-  height: 400px;
-}
-
-.pie-chart {
-  height: 400px;
-}
-
-
-.processedHeader {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.processedHeader-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.processedHeader-item {
-  flex: 1 1 200px;
-  display: flex;
-  justify-content: space-between;
-  background: #f0f0f0;
-  padding: 10px 15px;
-  border-radius: 8px;
-}
-
-.processedHeader-label {
+/* Title & Description */
+.vis-chart-title {
+  text-align: center;
+  font-size: 2.3rem;
   font-weight: bold;
-  color: #333;
+  margin-bottom: 1rem;
+  color: #1a237e;
 }
 
-.processedHeader-count {
+.vis-chart-description {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.05rem;
   color: #555;
+  line-height: 1.6;
 }
 
-.chat-title{
+/* Grid layout */
+.vis-chart-grid {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Reusable chart box style */
+.vis-chart-half,
+.vis-chart-full {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.chat-title h3 {
-  margin: 1rem auto;
-  font-weight: 700;
-  font-size: 1.9rem;
-  padding: 0;
 
+/* Specific sizes */
+.vis-chart-half {
+  flex: 1 1 45%;
+  max-width: 600px;
+  min-width: 320px;
 }
-.chart-main 
-{
-  height:90vh;
+
+.vis-chart-full {
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+/* Chart canvas sizing */
+.vis-chart-half canvas,
+.vis-chart-full canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 350px;
+}
+
+/* Text inside charts */
+.vis-chart-half h3,
+.vis-chart-full h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1565c0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.vis-chart-half p,
+.vis-chart-full p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  .vis-chart-half,
+  .vis-chart-full {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .vis-chart-title {
+    font-size: 2rem;
+  }
+
+  .vis-chart-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .vis-chart-half h3,
+  .vis-chart-full h3 {
+    font-size: 1.2rem;
+  }
+}
+
+
+.vis-kpi-cards {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  padding: 0 3.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem auto 3rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.vis-kpi-card {
+  flex: 1 1 200px;
+  min-width: 150px;
+  max-width: 250px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 6px solid #1976d2;
+}
+
+.vis-kpi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.15);
+}
+
+.vis-kpi-card h4 {
+  font-size: 1rem;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vis-kpi-card p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1976d2;
+  margin: 0;
+}
+
+/* Dark mode support (if needed in future) */
+body.dark .vis-kpi-card {
+  background-color: #1e1e1e;
+  border-left-color: #64b5f6;
+  color: #eee;
+}
+
+body.dark .vis-kpi-card h4 {
+  color: #bbdefb;
+}
+
+body.dark .vis-kpi-card p {
+  color: #90caf9;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 600px) {
+  .vis-kpi-cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .vis-kpi-card {
+    width: 90%;
+  }
 }
