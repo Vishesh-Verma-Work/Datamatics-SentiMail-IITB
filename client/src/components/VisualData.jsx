@@ -179,7 +179,10 @@ const CategoryDistributionChart = () => {
   return (
     <div className='vis-chart-main'>
       <h1 className='vis-chart-title'>Sentimail Dashboard</h1>
-      <p className='vis-chart-description'>Here’s an overview of all categorized email data and sentiment-based analysis. These charts reflect static processed email logs.</p>
+<p className='vis-chart-description'>
+  Welcome to the analytics core of Sentimail — a centralized system that transforms unstructured emails into structured, actionable insights.
+  This dashboard visualizes various types of customer communications including complaints, feedback, queries, and support requests.
+</p>
 
 
       {/* the card screen component --> */}

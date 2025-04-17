@@ -3,7 +3,7 @@ import '../styles/showEmails.css';
 
 const ShowMail = () => {
   const [emails, setEmails] = useState([]);
-  const [expanded, setExpanded] = useState({}); // Track which emails are expanded
+  const [expanded, setExpanded] = useState({});
 
   useEffect(() => {
     getEmails();
@@ -26,7 +26,7 @@ const ShowMail = () => {
   const toggleExpand = (emailId) => {
     setExpanded((prev) => ({
       ...prev,
-      [emailId]: !prev[emailId], // Toggle the expanded state for the specific email
+      [emailId]: !prev[emailId], 
     }));
   };
 
