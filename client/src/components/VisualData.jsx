@@ -273,3 +273,101 @@ const CategoryDistributionChart = () => {
 };
 
 export default CategoryDistributionChart;
+
+
+
+
+
+
+
+// <div className='vis-chart-grid'>
+// <div className='vis-chart-full'>
+//   <h3>Email Category Distribution</h3>
+//   <p>This chart shows how many emails fall under each type like complaints, feedback, support, etc.</p>
+//   <Bar data={barData} options={options} />
+// </div>
+
+// <div className='vis-chart-half'>
+//   <h3>Sentiment Distribution</h3>
+//   <Pie data={pieData} options={options} />
+// </div>
+
+// <div className='vis-chart-half'>
+//   <h3>Sentiment Volume Breakdown</h3>
+//   <Bar data={horizontalBar
+
+
+
+
+// <div className='vis-chart-grid'>
+//   <div className='vis-chart-full'>
+//     <h3>Email Category Distribution</h3>
+//     <p>This chart shows how many emails fall under each type like complaints, feedback, support, etc.</p>
+//     <Bar data={barData} options={options} />
+//   </div>
+
+//   <div className='vis-chart-half'>
+//     <h3>Sentiment Distribution</h3>
+//     <Pie data={pieData} options={options} />
+//   </div>
+
+//   <div className='vis-chart-half'>
+//     <h3>Sentiment Volume Breakdown</h3>
+//     <Bar data={horizontalBar
+
+
+
+
+// <div className='vis-chart-grid'>
+//   <div className='vis-chart-full'>
+//     <h3>Email Category Distribution</h3>
+//     <p>This chart shows how many emails fall under each type like complaints, feedback, support, etc.</p>
+//     <Bar data={barData} options={options} />
+//   </div>
+
+//   <div className='vis-chart-half'>
+//     <h3>Sentiment Distribution</h3>
+//     <Pie data={pieData} options={options} />
+//   </div>
+
+//   <div className='vis-chart-half'>
+//     <h3>Sentiment Volume Breakdown</h3>
+//     <Bar data={horizontalBar
+
+
+
+
+// <div className='vis-chart-grid'>
+//   <div className='vis-chart-full'>
+//     <h3>Email Category Distribution</h3>
+//     <p>This chart shows how many emails fall under each type like complaints, feedback, support, etc.</p>
+//     <Bar data={barData} options={options} />
+//   </div>
+
+//   <div className='vis-chart-half'>
+//     <h3>Sentiment Distribution</h3>
+//     <Pie data={pieData} options={options} />
+//   </div>
+
+//   <div className='vis-chart-half'>
+//     <h3>Sentiment Volume Breakdown</h3>
+//     <Bar data={horizontalBar
+
+
+
+
+// <div className='vis-chart-grid'>
+//   <div className='vis-chart-full'>
+//     <h3>Email Category Distribution</h3>
+//     <p>This chart shows how many emails fall under each type like complaints, feedback, support, etc.</p>
+//     <Bar data={barData} options={options} />
+//   </div>
+
+//   <div className='vis-chart-half'>
+//     <h3>Sentiment Distribution</h3>
+//     <Pie data={pieData} options={options} />
+//   </div>
+
+//   <div className='vis-chart-half'>
+//     <h3>Sentiment Volume Breakdown</h3>
+//     <Bar data={horizontalBar
